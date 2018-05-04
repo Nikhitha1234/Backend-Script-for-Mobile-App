@@ -30,7 +30,7 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    Menu.find()
+    Menu.find({Category:req.params.categoryName})
     .then(menus => {
         res.send(menus);
     }).catch(err => {
